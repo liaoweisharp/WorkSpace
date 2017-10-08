@@ -12,7 +12,7 @@ sys.setdefaultencoding('utf8')  #解决乱码问题
 class DatabaseDAL:
     def __init__(self,host=".",user="sa",password="liaowei",database="ZiZhi",charset='utf8'):
         '''
-        构造函数
+        构造 函数
         :param host: 
         :param user: 
         :param password: 
