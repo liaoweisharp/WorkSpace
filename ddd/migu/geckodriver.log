@@ -1,0 +1,165 @@
+1495762105184	geckodriver	INFO	Listening on 127.0.0.1:4723
+1495762107057	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1495762108129	addons.manager	ERROR	startup failed: [Exception... "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIFile.create]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: resource://gre/modules/FileUtils.jsm :: FileUtils_getDir :: line 70"  data: no] Stack trace: FileUtils_getDir()@resource://gre/modules/FileUtils.jsm:70 < FileUtils_getFile()@resource://gre/modules/FileUtils.jsm:42 < validateBlocklist()@resource://gre/modules/AddonManager.jsm:671 < startup()@resource://gre/modules/AddonManager.jsm:834 < startup()@resource://gre/modules/AddonManager.jsm:3129 < observe()@resource://gre/components/addonManager.js:65
+JavaScript error: resource://gre/modules/AddonManager.jsm, line 1657: NS_ERROR_NOT_INITIALIZED: AddonManager is not initialized
+1495762114818	Marionette	INFO	Listening on port 4733
+JavaScript error: resource://gre/modules/AddonManager.jsm, line 2570: NS_ERROR_NOT_INITIALIZED: AddonManager is not initialized
+1495762115621	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/FileUtils.jsm, line 70: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIFile.create]
+1495762200914	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1495762200920	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+IFile.create]
+JavaScript warning: http://js2.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=f43b6e301fa23eee, line 1: unreachable code after return statement
+JavaScript warning: http://js2.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=f43b6e301fa23eee, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756290850, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756328287, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756347342, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756367062, line 139: unreachable code after return statement
+JavaScript error: resource://app/modules/WindowsJumpLists.jsm, line 403: NS_ERROR_FILE_NOT_FOUND: Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [nsIJumpListShortcut.app]
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756405441, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756444915, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756464253, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756483519, line 139: unreachable code after return statement
+JavaScript error: resource://app/modules/WindowsJumpLists.jsm, line 403: NS_ERROR_FILE_NOT_FOUND: Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [nsIJumpListShortcut.app]
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756504188, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756542125, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756562236, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756580088, line 174: unreachable code after return statement
+JavaScript error: resource://app/modules/WindowsJumpLists.jsm, line 403: NS_ERROR_FILE_NOT_FOUND: Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [nsIJumpListShortcut.app]
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756617124, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756719302, line 139: unreachable code after return statement
+JavaScript error: resource://app/modules/WindowsJumpLists.jsm, line 403: NS_ERROR_FILE_NOT_FOUND: Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [nsIJumpListShortcut.app]
+JavaScript error: resource://gre/modules/AddonManager.jsm, line 1416: NS_ERROR_NOT_INITIALIZED: AddonManager is not initialized
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/common/all.js?version=a7f7fef7f64609bc, line 1: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 139: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 172: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 198: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 174: unreachable code after return statement
+JavaScript warning: http://js.t.sinajs.cn/t6/webim_prime/js/webim.js?v=1495756809355, line 139: unreachable code after return statement
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+onStartRequest@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/webconsole/network-monitor.js:436:5
+Line: 1491, column: 5
+JavaScript error: resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/main.js, line 1491: TypeError: this.transport is null
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.child1/highlighter32
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

@@ -1,0 +1,39 @@
+# coding=UTF-8
+import sys
+import traceback
+
+import requests
+import time
+from selenium import webdriver
+from bs4 import BeautifulSoup
+import re
+import json
+import urllib
+import random
+sys.path.append("..")
+import DataBase.DatabaseDAL
+# import global_Vars
+import Comm.Funs
+reload(sys)   #解决乱码问题
+sys.setdefaultencoding('utf8')  #解决乱码问题
+
+def main():
+
+    try:
+        ##需要改数据库名
+        cookiesStr = "utype=690340124; _jzqckmp=1; FSSBBIl1UgzbN7N443S=aNYXmT8JTdKdDVcN3njLui0p9HnCLSCOrV4XqA3O.8FidpZVYVlrklBV7DSdoIbA; HrID_7E7AB23E5FF344C780E41ABAAD0D934A=true; Home_ResultForCustom_isOpen=true; urlfrom=121113803; urlfrom2=121113803; adfcid=pzzhubiaoti1; adfcid2=pzzhubiaoti1; adfbid=0; adfbid2=0; dywez=95841923.1502241349.8.7.dywecsr=zhaopin.com|dyweccn=(referral)|dywecmd=referral|dywectr=undefined|dywecct=/; pcc=r=1882177441&t=1; __xsptplus30=30.6.1502241349.1502241349.1%231%7Cother%7Ccnt%7C121124274%7C%7C%23%23pF46utSvW_VhGvxL29nsg5jCnithp-HW%23; __utmt=1; _jzqa=1.837458578687229800.1498815250.1502176522.1502241350.6; _jzqc=1; _jzqx=1.1498815250.1502241350.2.jzqsr=yw-ask%2Ecom|jzqct=/proxy/zhilian%2Ephp.jzqsr=zhaopin%2Ecom|jzqct=/; _jzqb=1.1.10.1502241350.1; __zpWAM=1498815253747.218611.1502176524.1502241355.6; __zpWAMs1=1; __zpWAMs2=1; JsOrglogin=2071020374; at=4b53b6fa6cf84e57aa4dc5b7ebfed2ad; Token=4b53b6fa6cf84e57aa4dc5b7ebfed2ad; rt=6878059999414b9893383df5b34031e2; uiioit=213671340F69436B546A587947644774063505325B755F6D51683B742073493604340069456B5A6A5C794364417403350F328; xychkcontr=12074725%2c1; lastchannelurl=https%3A//passport.zhaopin.com/org/login%3FDYWE%3D1498815253747.218611.1502176524.1502241355.6%26y7bRbP%3DdpofrhKTzMKTzMKTr5BMp_7NFZtaW1t53eWcNolYr.V; JsNewlogin=690340124; cgmark=2; NewPinLoginInfo=; NewPinUserInfo=; RDpUserInfo=; isNewUser=1; ihrtkn=; RDsUserInfo=36672168546B5D754877557144654371556356655A695F6B4E713B653F77587702650A6711680C6B1A75187748710F651E710B6306650669506B207139654C771AFE263659343417750F5075337721714A654671576357655F695F6B4271456544775E7733652D6758687E38C73B6C171C03303C963E0A03E707470ECAEB883F7E0221E10926893658673168246B567543775E7132653A7158630F651A692B6B06711E655C771177146500670D68476B08751E770871596514710B635C653B693F6B487146654A77247725655E675D68446B527551775C714D65467153635C652C692F6B48714665437755774665576752685B6B5E754A77217139654A717230CB2B750912193228962A1E17E5155E02C2E79826600C3BE31D269D224C653B7128635A6558695B6B457146654A77267735655E6750685A6B5B754A77307123654A71546357655B69506B367136654C772677326552675768596B5C75457752714565427151635C652C692A6B48713465327754774365536752685D6B5C754377507143654C712163246555695A6B4E71246538775877426558672C68396B56754377517145655971546356655969506B34713B654C7755774A651; SearchHead_Erd=rd; __utma=269921210.1987517677.1497342773.1502175730.1502241350.8; __utmb=269921210.9.9.1502241382898; __utmc=269921210; __utmz=269921210.1502241350.8.7.utmcsr=zhaopin.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmv=269921210.|2=Member=690340124=1; getMessageCookie=1; Home_ResultForCustom_pageSize=60; SearchHistory_StrategyId_1=%2fHome%2fResultForCustom%3fSF_1_1_2%3d160000%26SF_1_1_7%3d5%252c9%26SF_1_1_5%3d7%252c16%26SF_1_1_18%3d801%26SF_1_1_27%3d0%26orderBy%3dDATE_MODIFIED%252c1%26pageSize%3d60%26exclude%3d1; dywea=95841923.564437880153664900.1497342772.1502175499.1502241349.8; dywec=95841923; dyweb=95841923.18.9.1502241382898; Hm_lvt_38ba284938d5eddca645bb5e02a02006=1501573014,1502156451,1502241349; Hm_lpvt_38ba284938d5eddca645bb5e02a02006=1502241942; FSSBBIl1UgzbN7N443T=1M1FFIf1wgWnp.OKtINetn__GWvXt5hmwWjMk_NqhBgqoPlgbfRnLxaiiq3leLMj5sqAbM273TJ6ZTbB_nLSyvwwa0o0kdWkuK8CmVFxMgtw0ORoGTL0tJkEoN4pyOsjDk3VlhO9jSfDxMHr38YHG.vf1xI58sATRxBP5PF3haowFyexzhXfmIuM8AEkPKtOUHw5NSqPBXX2M0d.ccHtqspHojMYNqT6572M9eOzpA25TzAKEoc9Y8DRekbdEN1rsIDuwDufIxknLle9c61t4S5uMHcyzTg7Z7OZoh9hm1bBjiqJBtBRCXnNRFEcdMke8tKB4L.W8qvMZr12h.5bMf5td; Home_ResultForCustom_orderBy=DATE_MODIFIED%2C1; Home_ResultForCustom_searchFrom=custom"
+        cookiesJson = Comm.Funs.strConvertDic(cookiesStr)
+        url = "https://rdsearch.zhaopin.com/Home/ResultForCustom"
+        data={"SF_1_1_2":"160000","SF_1_1_7":"4,9","SF_1_1_5":"7,16","SF_1_1_18":"801","SF_1_1_27":"0","orderBy":"DATE_MODIFIED,1","pageSize":"60","exclude":"1"}
+        data = urllib.urlencode(data)
+        url += "?" + data
+        url="https://rdsearch.zhaopin.com/Home/ResultForCustom?SF_1_1_2=160000&SF_1_1_7=4%2C9&SF_1_1_5=7%2C16&SF_1_1_18=801&SF_1_1_27=0&orderBy=DATE_MODIFIED,1&pageSize=60&exclude=1"
+        r = requests.get(url,  cookies=cookiesJson,  headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"})
+
+        print r.text
+    except:
+        traceback.print_exc()
+
+if __name__=="__main__":
+    main()

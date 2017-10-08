@@ -1,0 +1,6 @@
+{
+"users":[
+  {"name":"name1","age":29,"isSex":true}
+  ,{"name":"name2","age":30,"isSex":false}
+  ]
+}
