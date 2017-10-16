@@ -30,7 +30,7 @@ def main():
         list = dbDAL.query(sql)
 
         lastDate=list[0][0] ##表里最近的时间
-        print "最晚日期：{0}".format(lastDate).decode("utf8")
+        print "最晚日期：{0}".format(lastDate).decode("utf8","ignore")
         url = 'https://www.sczbbx.com/Performance/ProjectList.aspx'
 
         data = {}
@@ -57,16 +57,16 @@ def main():
                     "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"})
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
-                print e.message.decode("utf8")
-                print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8")
+                print e.message.decode("utf8","ignore")
+                print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8","ignore")
                 time.sleep(600)
                 try:
                     r = requests.post(url, data=data, cookies=cookies,verify=False, headers={
                         "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"})
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
-                    print e.message.decode("utf8")
-                    print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8")
+                    print e.message.decode("utf8","ignore")
+                    print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8","ignore")
                     pageNum += 1
                     continue
 
@@ -102,7 +102,7 @@ def main():
                     bo=False
                     break
                 objList.append(obj)
-                print  "len={2}, 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList)).decode("utf8")
+                print  "len={2}, 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList)).decode("utf8","ignore")
 
             pageNum += 1
 

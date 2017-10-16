@@ -79,7 +79,7 @@ def getId():
 
             except Exception as e:
                 print e.message
-                print "***超时，等待10分钟,{0}".format(companyName).decode("utf8")
+                print "***超时，等待10分钟,{0}".format(companyName).decode("utf8","ignore")
                 time.sleep(600)
                 try:
                     r = requests.post(url, data=data, headers={
@@ -87,7 +87,7 @@ def getId():
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
                     print e.message
-                    print "***再超时，跳过：{0}".format(companyName).decode("utf8")
+                    print "***再超时，跳过：{0}".format(companyName).decode("utf8","ignore")
                     errList.append({"companyName":companyName,"type":"超时"})
                     continue
             tbody = bsObj.find(name="tbody", attrs={"class": "cursorDefault"})
@@ -139,7 +139,7 @@ def getData(objList):
 
             except Exception as e:
                 print e.message
-                print "***超时，等待30秒,{0}".format(companyName).decode("utf8")
+                print "***超时，等待30秒,{0}".format(companyName).decode("utf8","ignore")
                 time.sleep(random.randint(25,35))
                 try:
                     r = requests.get(_url, headers={
@@ -147,7 +147,7 @@ def getData(objList):
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
                     print e.message
-                    print "***再超时，跳过：{0}".format(companyName).decode("utf8")
+                    print "***再超时，跳过：{0}".format(companyName).decode("utf8","ignore")
                     errList.append({"companyName": companyName, "type": "超时"})
                     continue
             tbody = bsObj.find(name="tbody", attrs={"class": "cursorDefault"})

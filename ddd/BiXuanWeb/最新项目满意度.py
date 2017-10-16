@@ -50,7 +50,7 @@ def main():
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
                 traceback.print_exc()
-                print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8")
+                print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8","ignore")
                 time.sleep(600)
                 try:
                     r = requests.post(url, data=data, verify=False, headers={
@@ -58,7 +58,7 @@ def main():
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
                     traceback.print_exc()
-                    print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8")
+                    print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8","ignore")
                     pageNum += 1
                     continue
             table=bsObj.find(id="ContentPlaceHolder1_ContentPlaceHolder2_UCCmpEvaluation1_gvCmpEvaluation")
@@ -85,7 +85,7 @@ def main():
                 obj["pingFen"] = tds[3].get_text().strip()
                 obj["create_Date"]=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
                 objList.append(obj)
-                print  "len={2},代理：{3}， 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["daiLiJiGou_Name"]).decode("utf8")
+                print  "len={2},代理：{3}， 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["daiLiJiGou_Name"]).decode("utf8","ignore")
 
             #如果最后一个项目已经存在正式表里，则退出循环
             sql="select count(1) from Tab_BX_XinYong where bxx_Project_Code='{0}'".format(obj["project_Code"])

@@ -54,12 +54,12 @@ def getData():
             cookiesStr = "filter_comp=show; _gscu_1181410730=811977694e56yh88; JSESSIONID=97FD233869F6F6DE1180617A401536F0; Hm_lvt_b1b4b9ea61b6f1627192160766a9c55c=1498620592,1498814278,1499812894,1499821141; Hm_lpvt_b1b4b9ea61b6f1627192160766a9c55c=1499821220"
             cookiesJson = Comm.Funs.strConvertDic(cookiesStr)
             data={"apt_code":"","qy_fr_name":"","qy_code":"","qy_name":"","apt_certno":"","qy_gljg":"","apt_scope":""}
-            data["$total"]=369
+            data["$total"]=376
             data["$pgsz"] =15
             data["qy_reg_addr"]="四川省"
             data["qy_region"]="510000"
             data["$reload"]="0"
-            data["qy_type"]="QY_ZZ_ZZZD_006"  ## 监理 :QY_ZZ_ZZZD_002  ##代理 ：QY_ZZ_ZZZD_006
+            data["qy_type"]="QY_ZZ_ZZZD_002"  ## 监理 :QY_ZZ_ZZZD_002  ##代理 ：QY_ZZ_ZZZD_006
             page=1
             while True:
                 ram=random.randint(2, 7)
@@ -73,7 +73,7 @@ def getData():
                     # print r.text
                 except Exception as e:
                     print e.message
-                    print "***超时，等待10分钟,{0}".decode("utf8")
+                    print "***超时，等待10分钟,{0}".decode("utf8","ignore")
                     time.sleep(600)
                     try:
                         r = requests.get(url, headers={
@@ -81,13 +81,13 @@ def getData():
                         bsObj = BeautifulSoup(r.text, "html.parser")
                     except Exception as e:
                         print e.message
-                        print "***再超时".decode("utf8")
+                        print "***再超时".decode("utf8","ignore")
                 tbody = bsObj.find(name="tbody", attrs={"class": "cursorDefault"})
                 if int(data["$total"])==len(returnValue):
                     # 结束
                     return returnValue
                 if tbody is None:
-                    print  "**空对象".decode("utf8")
+                    print  "**空对象".decode("utf8","ignore")
                     time.sleep(20)
                     continue
                 trs = tbody.findAll(name="tr")

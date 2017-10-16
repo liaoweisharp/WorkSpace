@@ -36,7 +36,7 @@ def main():
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
                 traceback.print_exc()
-                print "超时，等待30秒,User_Code={0}".format(bxu_code).decode("utf8")
+                print "超时，等待30秒,User_Code={0}".format(bxu_code).decode("utf8","ignore")
                 time.sleep(30)
                 try:
                     r = requests.get(url + "?EmployeeId=" + bxu_code,verify=False, headers={
@@ -44,12 +44,12 @@ def main():
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
                     traceback.print_exc()
-                    print "再超时，跳过，User_Code={0}".format(bxu_code).decode("utf8")
+                    print "再超时，跳过，User_Code={0}".format(bxu_code).decode("utf8","ignore")
                     continue
 
             label =bsObj.find(id="ContentPlaceHolder1_ContentPlaceHolder2_UCPerformanceList1_lbTitle")
             if label is None:
-                print "没有label节点，跳过bxu_code={0}".format(bxu_code).decode("utf8")
+                print "没有label节点，跳过bxu_code={0}".format(bxu_code).decode("utf8","ignore")
                 continue
 
             str=label.get_text()
@@ -58,7 +58,7 @@ def main():
             obj["bxu_ShenFenZheng"]=shenFenZhengHao
             obj["bxu_Code"] = bxu_code
             objList.append(obj)
-            print "len={3},user_Code={0},userName={1},身份证号={2}".format(obj["bxu_Code"],bxu_name,obj["bxu_ShenFenZheng"],num*10+len(objList)).decode("utf8")
+            print "len={3},user_Code={0},userName={1},身份证号={2}".format(obj["bxu_Code"],bxu_name,obj["bxu_ShenFenZheng"],num*10+len(objList)).decode("utf8","ignore")
             ## 再插入数据表
             if len(objList)==10:
 

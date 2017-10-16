@@ -36,7 +36,7 @@ def main():
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
                 print e.message
-                print "超时，等待1秒分钟,Company_Code={0}".format(bxc_Code).decode("utf8")
+                print "超时，等待1秒分钟,Company_Code={0}".format(bxc_Code).decode("utf8","ignore")
                 time.sleep(60)
                 try:
                     r = requests.get(url + "?CompanyId=" + bxc_Code,verify=False, headers={
@@ -44,16 +44,16 @@ def main():
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
                     print e.message
-                    print "再超时，Company_Code={0}".format(bxc_Code).decode("utf8")
+                    print "再超时，Company_Code={0}".format(bxc_Code).decode("utf8","ignore")
                     continue
 
             td=bsObj.find(name="td", attrs={"class": "personnel_name"})
             if td is None:
-                print "跳过Company_Code={0}".format(bxc_Code).decode("utf8")
+                print "跳过Company_Code={0}".format(bxc_Code).decode("utf8","ignore")
                 continue
             domA=td.findAll(name="a")
             if domA is None:
-                print "跳过,没有用户，Company_Code={0}".format(bxc_Code).decode("utf8")
+                print "跳过,没有用户，Company_Code={0}".format(bxc_Code).decode("utf8","ignore")
                 continue
 
             for a in domA:
@@ -66,7 +66,7 @@ def main():
                     if(len(arr)>1):
                         obj["bxu_Code"] =arr[1]
                 objList.append(obj)
-                print "公司数量:{4},len={2}, 公司:{0} {3}, 姓名:{1}".format(obj["bxu_Company_Code"],obj["bxu_Name"],len(objList),bxc_ComanyName,pageNum).decode("utf8")
+                print "公司数量:{4},len={2}, 公司:{0} {3}, 姓名:{1}".format(obj["bxu_Company_Code"],obj["bxu_Name"],len(objList),bxc_ComanyName,pageNum).decode("utf8","ignore")
 
 
         ## 先清空数据表

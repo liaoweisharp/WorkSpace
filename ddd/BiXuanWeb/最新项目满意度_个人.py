@@ -51,7 +51,7 @@ def main():
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
                 traceback.print_exc()
-                print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8")
+                print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8","ignore")
                 time.sleep(600)
                 try:
                     r = requests.post(url, data=data, verify=False, headers={
@@ -59,7 +59,7 @@ def main():
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
                     traceback.print_exc()
-                    print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8")
+                    print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8","ignore")
                     pageNum += 1
                     continue
             if maxPage==0:
@@ -94,7 +94,7 @@ def main():
                 obj["manYiDu"] = label.attrs["title"].strip()
 
                 objList.append(obj)
-                print  "len={2}, 项目：{0}，project_Code={1},userName:{3}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["user_Name"]).decode("utf8")
+                print  "len={2}, 项目：{0}，project_Code={1},userName:{3}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["user_Name"]).decode("utf8","ignore")
                 # if len(objList)==100:
                 #     dbDAL.insert(tableName="Tab_BX_LiuShui_User_Satisfaction", list=objList)
                 #     print  "正在存数据库....."
