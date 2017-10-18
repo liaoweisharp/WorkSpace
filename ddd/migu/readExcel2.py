@@ -2,7 +2,7 @@
 ##******************************************************************************
 ## **  文件名称: readExcel2.py
 ## **  功能描述: excel文件入库hive表（营销用语）
-## **  入库表：VGOP_DIM_PICTURE_SALE_TMP
+## **  入库表：vgop_dim_picture_sale
 ## **
 ## **
 ## **  创建者:   Liao Wei
@@ -37,7 +37,7 @@ _dealday=sys.argv[3]
 # path = 'C:\\2.xlsx'
 # newPath='D:\\2.txt'
 # _dealday='20170728'
-targetTable='VGOP_DIM_PICTURE_SALE_TMP' ## 入库表
+targetTable='vgop_dim_picture_sale' ## 入库表
 splitCol='\t'
 splitRow='\n'
 dayWeek=4 ## 星期4 处理
@@ -45,23 +45,28 @@ data = []
 headers = None
 
 def main():
-    global data, headers
-    dealday=getDealDay(_dealday)
+    try:
+        global data, headers
+        dealday=getDealDay(_dealday)
 
-    excelBuilder = Comm.ExcelBuilder.ExcelBuilder(path)
-    _data=excelBuilder.readSheet(0,fromX=1,fromY=0,returnType="字典")
-    if _data is not None:
-        excelBuilder.insertByIndex(0, dealday,'col'+dealday)
-        data.extend(excelBuilder.getData())
-    _data = excelBuilder.readSheet(1, fromX=1, fromY=0, returnType="字典")
-    if _data is not None:
-        excelBuilder.insertByIndex(0, dealday,'col'+dealday)
-        data.extend(excelBuilder.getData())
-    excelBuilder.selectIndexs([0,7,18,20])
+        excelBuilder = Comm.ExcelBuilder.ExcelBuilder(path)
+        _data=excelBuilder.readSheet(0,fromX=1,fromY=0,returnType="字典")
+        if _data is not None:
+            excelBuilder.insertByIndex(0, dealday,'col'+dealday)
+            data.extend(excelBuilder.getData())
+        _data = excelBuilder.readSheet(1, fromX=1, fromY=0, returnType="字典")
+        if _data is not None:
+            excelBuilder.insertByIndex(0, dealday,'col'+dealday)
+            data.extend(excelBuilder.getData())
+        excelBuilder.selectIndexs([0,7,18,20])
 
-    headers=excelBuilder.getHeader()
-    exportFile(newPath)
-    os.system('sh insertHive.sh {0} {1}'.format(newPath, targetTable))
+        headers=excelBuilder.getHeader()
+        exportFile(newPath)
+        os.system('sh insertHive.sh {0} {1} > /dev/null 2>&1'.format(newPath, targetTable))
+    except:
+        traceback.print_exc()
+    else:
+        print "0"
 
 def getDealDay(_dealday):
     '''

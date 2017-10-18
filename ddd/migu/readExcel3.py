@@ -2,7 +2,7 @@
 ##******************************************************************************
 ## **  文件名称: readExcel3.py
 ## **  功能描述: excel文件入库hive表（集团标签）
-## **  入库表：MUSIC_DESCRIPTIVE_DESC_TEMP
+## **  入库表：vgop_music_descriptive_desc
 ## **
 ## **
 ## **  创建者:   Liao Wei
@@ -37,7 +37,7 @@ _dealday=sys.argv[3]
 # path = 'C:\\3.xlsx'
 # newPath='D:\\3.txt'
 # _dealday='20170728'
-targetTable='MUSIC_DESCRIPTIVE_DESC_TEMP' ## 入库表
+targetTable='vgop_music_descriptive_desc' ## 入库表
 splitCol='\t'
 splitRow='\n'
 dayWeek=4 ## 星期4 处理
@@ -45,19 +45,24 @@ data = []
 headers = None
 
 def main():
-    global data, headers
-    dealday=getDealDay(_dealday)
-    excelBuilder = Comm.ExcelBuilder.ExcelBuilder(path)
-    data=excelBuilder.readSheet(0,fromX=1,fromY=0,returnType="字典")
-    if data is not None:
-        excelBuilder.selectIndexs([0, 1, 2, 3, 5, 6, 7, 4])
-        excelBuilder.insertByIndex(8,dealday)
-    headers=excelBuilder.getHeader()
-    data = excelBuilder.getData()
-    ## 逗号替换成竖线 （情感、主题、风格、对象、场景）
-    doReplace(data,headers)
-    exportFile(newPath)
-    os.system('sh insertHive.sh {0} {1}'.format(newPath,targetTable))
+    try:
+        global data, headers
+        dealday=getDealDay(_dealday)
+        excelBuilder = Comm.ExcelBuilder.ExcelBuilder(path)
+        data=excelBuilder.readSheet(0,fromX=1,fromY=0,returnType="字典")
+        if data is not None:
+            excelBuilder.selectIndexs([0, 1, 2, 3, 5, 6, 7, 4])
+            excelBuilder.insertByIndex(8,dealday)
+        headers=excelBuilder.getHeader()
+        data = excelBuilder.getData()
+        ## 逗号替换成竖线 （情感、主题、风格、对象、场景）
+        doReplace(data,headers)
+        exportFile(newPath)
+        os.system('sh insertHive.sh {0} {1} > /dev/null 2>&1'.format(newPath,targetTable))
+    except:
+        traceback.print_exc()
+    else:
+        print "0"
 
 def doReplace(data,headers):
     indexList=[3,4,5,6,7]
