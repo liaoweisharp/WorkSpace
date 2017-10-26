@@ -85,8 +85,10 @@ def main():
                 obj["pingFen"] = tds[3].get_text().strip()
                 obj["create_Date"]=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
                 objList.append(obj)
-                print  "len={2},代理：{3}， 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["daiLiJiGou_Name"]).decode("utf8","ignore")
-
+                try:
+                    print  "len={2},代理：{3}， 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["daiLiJiGou_Name"]).decode("utf8","ignore")
+                except:
+                    pass
             #如果最后一个项目已经存在正式表里，则退出循环
             sql="select count(1) from Tab_BX_XinYong where bxx_Project_Code='{0}'".format(obj["project_Code"])
             a1=dbDAL.query(sql)

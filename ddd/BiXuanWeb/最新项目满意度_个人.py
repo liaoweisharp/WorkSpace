@@ -94,7 +94,10 @@ def main():
                 obj["manYiDu"] = label.attrs["title"].strip()
 
                 objList.append(obj)
-                print  "len={2}, 项目：{0}，project_Code={1},userName:{3}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["user_Name"]).decode("utf8","ignore")
+                try:
+                    print  "len={2}, 项目：{0}，project_Code={1},userName:{3}".format(obj["project_Name"],obj["project_Code"],len(objList),obj["user_Name"]).decode("utf8","ignore")
+                except:
+                    pass
                 # if len(objList)==100:
                 #     dbDAL.insert(tableName="Tab_BX_LiuShui_User_Satisfaction", list=objList)
                 #     print  "正在存数据库....."

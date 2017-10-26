@@ -1,5 +1,7 @@
 # coding=UTF-8
 import sys
+import traceback
+
 import requests
 import time
 from selenium import webdriver
@@ -57,7 +59,7 @@ def main():
                     "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"})
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
-                print e.message.decode("utf8","ignore")
+                traceback.print_exc()
                 print "***超时，等待10分钟,pageNum={0}".format(pageNum).decode("utf8","ignore")
                 time.sleep(600)
                 try:
@@ -65,7 +67,7 @@ def main():
                         "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"})
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
-                    print e.message.decode("utf8","ignore")
+                    traceback.print_exc()
                     print "***再超时，跳过页码：pageNum={0}".format(pageNum).decode("utf8","ignore")
                     pageNum += 1
                     continue
@@ -102,8 +104,10 @@ def main():
                     bo=False
                     break
                 objList.append(obj)
-                print  "len={2}, 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList)).decode("utf8","ignore")
-
+                try:
+                    print  "len={2}, 项目：{0}，project_Code={1}".format(obj["project_Name"],obj["project_Code"],len(objList)).decode("utf8","ignore")
+                except:
+                    traceback.print_exc();
             pageNum += 1
 
         ## 先清空数据表

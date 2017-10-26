@@ -1,5 +1,7 @@
 # coding=UTF-8
 import sys
+import traceback
+
 import requests
 import time
 from selenium import webdriver
@@ -36,7 +38,7 @@ def main():
                     "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"})
                 bsObj = BeautifulSoup(r.text, "html.parser")
             except Exception as e:
-                print e.message
+                traceback.print_exc();
                 print "超时，等待10分钟,project_Code={0}".format(project_Code).decode("utf8")
                 time.sleep(600)
                 try:
@@ -44,7 +46,7 @@ def main():
                         "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"})
                     bsObj = BeautifulSoup(r.text, "html.parser")
                 except Exception as e:
-                    print e.message
+                    traceback.print_exc();
                     print "再超时，跳过project_Code={0}".format(project_Code).decode("utf8")
                     continue
 
@@ -86,8 +88,10 @@ def main():
                     if(len(arr)>1):
                         obj["name_Code"] =arr[1]
                 objList.append(obj)
-                print "len={2}, {0},{3},{1}".format(obj["project_Code"],obj["name"],len(objList),companyName).decode("utf8")
-
+                try:
+                    print "len={2}, {0},{3},{1}".format(obj["project_Code"],obj["name"],len(objList),companyName).decode("utf8")
+                except:
+                    traceback.print_exc()
 
 
            # dbDAL.update("Tab_BX_LiuShui_NewProject",companyList,("project_Code",))
